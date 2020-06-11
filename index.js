@@ -33,9 +33,9 @@ io.on("connection", (socket) => {
     const roomQuery = RoomList.find({ room });
 
     roomQuery.then((res) => {
-      const roomArray = res.map((item) => item.room)
+      const roomArray = res.map((item) => item.room);
 
-      if (!roomArray.includes( room )) {
+      if (!roomArray.includes(room)) {
         roomListInstance.save(function (err) {
           if (err) {
             return console.error(err);
